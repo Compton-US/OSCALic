@@ -1,6 +1,6 @@
 from uuid import UUID
-from typing import List,Field
-from pydantic import BaseModel
+from typing import List
+from pydantic import BaseModel,Field
 from .assemblies import ByComponentAssembly
 
 class StatementAssembly(BaseModel):
