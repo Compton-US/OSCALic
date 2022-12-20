@@ -1,7 +1,7 @@
 from uuid import UUID
 from typing import List
 from pydantic import BaseModel,Field
-from .assemblies import ByComponentAssembly
+from .by_component import ByComponentAssembly
 
 class StatementAssembly(BaseModel):
     uuid: str | UUID

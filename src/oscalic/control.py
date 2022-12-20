@@ -5,7 +5,9 @@ from pydantic import BaseModel,Field
 from yaml import safe_load,YAMLError,dump
 
 from .validation import OSCALValidationError
-from .assemblies import ByComponentAssembly,SetParameterAssembly,StatementAssembly
+from .by_component import ByComponentAssembly
+from .set_parameter import SetParameterAssembly
+from .statement import StatementAssembly
 
 class ControlAssembly(BaseModel):
     uuid: str | UUID
@@ -16,7 +18,7 @@ class ControlAssembly(BaseModel):
 
     def from_yaml(yaml_content, template):
         control = None
-        
+
         try:
             loaded_yaml = safe_load(yaml_content)
         except YAMLError as e:
