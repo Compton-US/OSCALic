@@ -1,7 +1,6 @@
 from uuid import UUID
 from typing import List
 from pydantic import BaseModel,Field
-from assemblies import ByComponenAssembly,SetParameterAssembly
 
 class SetParameterAssembly(BaseModel):
     param_id: str = Field(alias='param-id')
