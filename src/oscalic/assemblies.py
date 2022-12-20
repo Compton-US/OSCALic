@@ -1,7 +1,7 @@
-from .by_component import *
-from .set_parameter import *
-from .control import *
-from .statement import *
+from .by_component import ByComponentAssembly
+from .set_parameter import SetParameterAssembly
+from .control import ControlAssembly
+from .statement import StatementAssembly
 
 
 

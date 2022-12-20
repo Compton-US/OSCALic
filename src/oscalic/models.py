@@ -1,1 +1,1 @@
-from .system_security_plan import *
+from .system_security_plan import SystemSecurityPlan
