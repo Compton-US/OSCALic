@@ -16,7 +16,7 @@ class ControlAssembly(BaseModel):
     statements: List[StatementAssembly] | None
     by_components: List[ByComponentAssembly] = Field(default=None, alias='by-components')
 
-    def from_yaml(yaml_content, template):
+    def from_yaml(yaml_content):
         control = None
 
         try:
@@ -26,7 +26,7 @@ class ControlAssembly(BaseModel):
             raise
 
         try:
-            control = ControlAssembly(**loaded_yaml)
+            control = ControlAssembly(**loaded_yaml[0])
         except OSCALValidationError as e:
             print(f"VALIDATION ERROR: {e.json()}\n")
             raise
