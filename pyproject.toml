@@ -16,6 +16,10 @@ classifiers = [
     "Operating System :: OS Independent",
     "Development Status :: 2 - Pre-Alpha",
 ]
+dependencies = [
+  "hatchling",
+  "pydantic"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/Compton-NIST/OSCALic"
