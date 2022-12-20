@@ -34,5 +34,5 @@ class ControlAssembly(BaseModel):
         return control
 
 
-    def to_yaml(model):
-        dump(model.dict(by_alias=True,exclude_unset=True), sort_keys=False)
+    def to_yaml(self):
+        dump(self.dict(by_alias=True,exclude_unset=True), sort_keys=False)
