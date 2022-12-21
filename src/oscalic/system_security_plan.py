@@ -47,7 +47,7 @@ class InformationTypeAssembly(BaseModel):
     availability_impact: ImpactAssembly = Field(default=None, alias='availability-impact')
 
 class SystemInformationAssembly(BaseModel):
-    information_type: List[InformationTypeAssembly] = Field(default=None, alias='information-type')
+    information_types: List[InformationTypeAssembly] = Field(default=None, alias='information-types')
 
 class SecurityImpactLevelAssembly(BaseModel):
     security_objective_confidentiality: str = Field(default=None, alias='security-objective-confidentiality')
@@ -71,11 +71,12 @@ class SystemCharacteristicAssembly(BaseModel):
     authorization_boundary: AuthorizationBoundaryAssembly = Field(default=None, alias='authorization-boundary')
 
 class ControlImplementationAssembly(BaseModel):
+    description: str
     implemented_requirements: List[ControlAssembly] = Field(default=None, alias='implemented-requirements')
 
 class AuthorizedPrivilegeAssembly(BaseModel):
     title: str
-    functions_performed: List = Field(default=None, alias='functions-perfomed')
+    functions_performed: List = Field(default=None, alias='functions-performed')
 
 class UserAssembly(BaseModel):
     uuid: str | UUID
