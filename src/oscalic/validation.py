@@ -1,2 +1,5 @@
-from pydantic import ValidationError as OSCALValidationError
+
+
+class Validation:
+    from pydantic import ValidationError as OSCALValidationError
 
