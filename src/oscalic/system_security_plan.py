@@ -21,7 +21,7 @@ class ImportProfileAssembly(BaseModel):
 
 class MetadataAssembly(BaseModel):
     title: str
-    last_modified: datetime.datetime = Field(default=None, alias='last-modified')
+    last_modified: str = Field(default=None, alias='last-modified')
     version: str
     oscal_version: str = Field(default=None, alias='oscal-version')
     roles: List[RoleAssembly] | None
