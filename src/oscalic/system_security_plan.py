@@ -32,7 +32,7 @@ class IdAssembly(BaseModel):
 
 class CategorizationAssembly(BaseModel):
     system: str | None
-    information_type_ids: List[IdAssembly] = Field(default=None, alias='information-type-ids')
+    information_type_ids: List = Field(default=None, alias='information-type-ids')
 
 class ImpactAssembly(BaseModel):
     base: str | None
