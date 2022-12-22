@@ -15,7 +15,7 @@ class Helper:
         try:
             loaded_yaml = safe_load(yaml_content)
         except YAMLError as e:
-            print(f"YAML ERROR: Could not interpret ({e.problem}).\n")
+            # print(f"YAML ERROR: Could not interpret ({e.problem}).\n")
             raise
 
         if type(loaded_yaml) == list:
@@ -27,7 +27,7 @@ class Helper:
             try:
                 result = model(**loaded_yaml)
             except Validation.OSCALValidationError as e:
-                print(f"VALIDATION ERROR: {e.json()}\n")
+                # print(f"VALIDATION ERROR: {e.json()}\n")
                 raise
 
         return result
