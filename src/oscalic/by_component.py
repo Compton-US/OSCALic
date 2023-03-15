@@ -18,7 +18,7 @@ class InheritanceAssembly(BaseModel):
 class ProvidedAssembly(BaseModel):
     uuid: str | UUID
     description: str | None
-    import_ref: UUID = Field(default=None, alias='import-ref')
+    import_ref: str | UUID = Field(default=None, alias='import-ref')
     implementation_status: ImplementationStatusAssembly = Field(default=None, alias='implementation-status')
     inheritance: InheritanceAssembly = Field(default=None)
 
