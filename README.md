@@ -19,3 +19,9 @@ python3 -m build
 ```
 pip install git+https://github.com/Compton-NIST/OSCALic.git@develop#egg=oscalic
 ```
+
+## Local Install
+
+```
+pip install -e .
+```
