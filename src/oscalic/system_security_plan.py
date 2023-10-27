@@ -3,8 +3,9 @@ from typing import List
 from pydantic import BaseModel, Field
 from yaml import safe_load,YAMLError,dump
 
-from .control import ControlAssembly
 from .validation import Validation
+
+from .control import *
 from .common import *
 
 import datetime

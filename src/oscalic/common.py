@@ -1,5 +1,5 @@
-from pydantic import BaseModel, Field, List
-from .control import ControlAssembly
+from pydantic import BaseModel, Field
+from typing import List
 from uuid import UUID
 
 class RoleAssembly(BaseModel):
@@ -27,10 +27,6 @@ class IdAssembly(BaseModel):
 class StatusAssembly(BaseModel):
     state: str
 
-class ControlImplementationAssembly(BaseModel):
-    description: str
-    implemented_requirements: List[ControlAssembly] = Field(default=None, alias='implemented-requirements')
-
 class PropsAssembly(BaseModel):
     name: str
     value: str
@@ -42,3 +38,26 @@ class ComponentAssembly(BaseModel):
     description: str
     props: List[PropsAssembly]
     status: StatusAssembly
+
+
+class ResponsibilitiesAssembly(BaseModel):
+    uuid: str | UUID
+    description: str | None
+    provided_uuid: str | UUID = Field(default=None, alias='provided-uuid')
+    satisfied_uuid: str | UUID = Field(default=None, alias='satisfied-uuid')
+    
+class ProvidedAssembly(BaseModel):
+    uuid: str | UUID
+    satisfied_uuid: str | UUID = Field(default=None, alias='satisfied-uuid')
+    description: str | None
+
+class InheritedAssembly(BaseModel):
+    uuid: str | UUID
+    description: str | None
+    provided_uuid: str | UUID = Field(default=None, alias='provided-uuid')
+    satisfied_uuid: str | UUID = Field(default=None, alias='satisfied-uuid')
+
+class SatisfiedAssembly(BaseModel):
+    uuid: str | UUID
+    responsibility_uuid: str | UUID = Field(default=None, alias='responsibility-uuid')
+    description: str | None
